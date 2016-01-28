@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="XeDB" class="com.xedb.XeDB" CRUDService="true" type="DataService" springFile="XeDB.spring.xml">
+    <operation operationType="hqlquery" name="getPerfusuaById">
+        <parameter name="id" typeRef="java.lang.Long" isList="false"/>
+        <return typeRef="com.xedb.data.Perfusua" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.xedb.data.Formperf" supportsQuickData="true">
+            <element name="idFormperf" typeRef="java.lang.Long" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="activo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="formulario" typeRef="com.xedb.data.Formulario" isList="false" allowNull="false"/>
+            <element name="perfil" typeRef="com.xedb.data.Perfil" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.xedb.data.Formulario" supportsQuickData="true">
+            <element name="codigo" typeRef="java.lang.Long" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="descripcion" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="nemotecnia" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="activo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="formusuas" typeRef="com.xedb.data.Formusua" isList="true" allowNull="true"/>
+            <element name="formperfs" typeRef="com.xedb.data.Formperf" isList="true" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.xedb.data.Formusua" supportsQuickData="true">
+            <element name="idFormusua" typeRef="java.lang.Long" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="activo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="formulario" typeRef="com.xedb.data.Formulario" isList="false" allowNull="false"/>
+            <element name="usuarios" typeRef="com.xedb.data.Usuarios" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.xedb.data.Perfil" supportsQuickData="true">
+            <element name="codigo" typeRef="java.lang.Long" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="descripcion" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="activo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="perfusuas" typeRef="com.xedb.data.Perfusua" isList="true" allowNull="true"/>
+            <element name="formperfs" typeRef="com.xedb.data.Formperf" isList="true" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.xedb.data.Perfusua" supportsQuickData="true">
+            <element name="idPerfusua" typeRef="java.lang.Long" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="activo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="perfil" typeRef="com.xedb.data.Perfil" isList="false" allowNull="false"/>
+            <element name="usuarios" typeRef="com.xedb.data.Usuarios" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.xedb.data.Usuarios" supportsQuickData="true">
+            <element name="usuario" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="nombre" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="estado" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="formusuas" typeRef="com.xedb.data.Formusua" isList="true" allowNull="true"/>
+            <element name="perfusuas" typeRef="com.xedb.data.Perfusua" isList="true" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>

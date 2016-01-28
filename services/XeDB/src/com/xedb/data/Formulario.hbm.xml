@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.xedb.data.Formulario" table="FORMULARIO" schema="CLOBO" dynamic-insert="false" dynamic-update="false">
+        <id name="codigo" type="long">
+            <column name="CODIGO" precision="10"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" length="510" not-null="true"/>
+        </property>
+        <property name="nemotecnia" type="string">
+            <column name="NEMOTECNIA" length="16" not-null="true"/>
+        </property>
+        <property name="activo" type="string">
+            <column name="ACTIVO" length="1" not-null="true"/>
+        </property>
+        <set name="formusuas" inverse="true" cascade="">
+            <key>
+                <column name="CODIGO_FORMULARIO" precision="10" not-null="true"/>
+            </key>
+            <one-to-many class="com.xedb.data.Formusua"/>
+        </set>
+        <set name="formperfs" inverse="true" cascade="">
+            <key>
+                <column name="CODIGO_FORMULARIO" precision="10" not-null="true"/>
+            </key>
+            <one-to-many class="com.xedb.data.Formperf"/>
+        </set>
+    </class>
+</hibernate-mapping>

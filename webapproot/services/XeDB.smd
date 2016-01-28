@@ -1,0 +1,13 @@
+{
+	"methods": [{
+		"name": "getPerfusuaById",
+		"operationType": "hqlquery",
+		"parameters": [{
+			"name": "id",
+			"type": "java.lang.Long"
+		}],
+		"returnType": "com.xedb.data.Perfusua"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "XeDB.json"
+}
