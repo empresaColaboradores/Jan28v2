@@ -43,7 +43,7 @@ formusuaCancelButton: ["wm.Button", {"caption":"Cancelar","margin":"4"}, {"oncli
 layoutBox1: ["wm.Layout", {"horizontalAlign":"left","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top"}, {}, {
 panel1: ["wm.Panel", {"height":"100%","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
 formusuaLivePanel1: ["wm.LivePanel", {"horizontalAlign":"left","verticalAlign":"top"}, {}, {
-formusuaGridPanel: ["wm.FancyPanel", {"minDesktopHeight":220,"minHeight":220,"title":"Formusua"}, {}, {
+formusuaGridPanel: ["wm.FancyPanel", {"height":"315px","minDesktopHeight":220,"title":"Formusua"}, {}, {
 formusuaDojoGrid: ["wm.DojoGrid", {"_classes":{"domNode":["omgDataGrid"]},"border":"0","columns":[
 {"show":true,"field":"idFormusua","title":"IdFormusua","width":"171px","align":"right","formatFunc":"","mobileColumn":false},
 {"show":true,"field":"formulario.codigo","title":"Codigo Formulario","width":"282px","align":"right","formatFunc":"","mobileColumn":false},
@@ -55,9 +55,34 @@ formusuaDojoGrid: ["wm.DojoGrid", {"_classes":{"domNode":["omgDataGrid"]},"borde
 {"show":false,"field":"usuarios.estado","title":"Estado","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":true,"field":"activo","title":"Activo","width":"100%","align":"left","formatFunc":"","editorProps":null,"mobileColumn":false},
 {"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"IdFormusua: \" + ${idFormusua} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Codigo Formulario: \" + ${formulario.codigo}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Usuario: \" + ${usuarios.usuario}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Activo: \" + ${activo}\n + \"</div>\"\n\n","mobileColumn":true}
-],"dsType":"com.xedb.data.Formusua","height":"431px","margin":"4","minDesktopHeight":60,"width":"970px"}, {}, {
+],"dsType":"com.xedb.data.Formusua","height":"290px","margin":"4","minDesktopHeight":60,"width":"970px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"source":"lvFormulariosUsuarios","targetProperty":"dataSet"}, {}]
+}]
+}]
+}],
+fancyPanel1: ["wm.FancyPanel", {"height":"132px","title":"Usuario"}, {}, {
+dojoGrid1: ["wm.DojoGrid", {"columns":[
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Usuario: \" + ${usuario} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Nombre: \" + ${nombre}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Estado: \" + ${estado}\n + \"</div>\"\n\n","mobileColumn":true},
+{"show":true,"field":"usuario","title":"Usuario","width":"100%","displayType":"Text","align":"left","formatFunc":""},
+{"show":true,"field":"nombre","title":"Nombre","width":"100%","displayType":"Text","align":"left","formatFunc":""},
+{"show":true,"field":"estado","title":"Estado","width":"100%","displayType":"Text","align":"left","formatFunc":""}
+],"margin":"4","minDesktopHeight":60,"singleClickEdit":true}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"formusuaDojoGrid.selectedItem.usuarios","targetProperty":"dataSet"}, {}]
+}]
+}]
+}],
+fancyPanel2: ["wm.FancyPanel", {"height":"125px","title":"Formulario"}, {}, {
+dojoGrid2: ["wm.DojoGrid", {"columns":[
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Codigo: \" + ${codigo} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Descripcion: \" + ${descripcion}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Activo: \" + ${activo}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Nemotecnia: \" + ${nemotecnia}\n + \"</div>\"\n\n","mobileColumn":true},
+{"show":true,"field":"codigo","title":"Codigo","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"descripcion","title":"Descripcion","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"activo","title":"Activo","width":"100%","align":"left","formatFunc":"","editorProps":null,"mobileColumn":false},
+{"show":true,"field":"nemotecnia","title":"Nemotecnia","width":"100%","align":"left","formatFunc":"","mobileColumn":false}
+],"margin":"4","minDesktopHeight":60,"singleClickEdit":true}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"formusuaDojoGrid.selectedItem.formulario","targetProperty":"dataSet"}, {}]
 }]
 }]
 }],
@@ -67,10 +92,10 @@ binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"formusuaDojoGrid.selectedItem","targetProperty":"dataSet"}, {}]
 }],
 idFormusuaEditor2: ["wm.Number", {"caption":"IdFormusua","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idFormusua","height":"26px","readonly":true,"required":true,"width":"90%"}, {}],
+formularioLookup2: ["wm.Lookup", {"caption":"Formulario","captionSize":"140px","dataType":"com.xedb.data.Formulario","displayField":"nemotecnia","formField":"formulario","readonly":true,"required":true,"width":"90%"}, {}],
+usuariosLookup1: ["wm.Lookup", {"caption":"Usuarios","captionSize":"140px","dataType":"com.xedb.data.Usuarios","displayField":"nombre","formField":"usuarios","readonly":true,"required":true,"width":"90%"}, {}],
 activoEditor2: ["wm.Text", {"caption":"Activo","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"emptyString","formField":"activo","height":"26px","maxChars":1,"readonly":true,"required":true,"width":"90%"}, {}],
-formularioLookup2: ["wm.Lookup", {"caption":"Formulario","captionSize":"140px","dataType":"com.xedb.data.Formulario","displayField":"activo","formField":"formulario","readonly":true,"required":true,"width":"90%"}, {}],
-usuariosLookup1: ["wm.Lookup", {"caption":"Usuarios","captionSize":"140px","dataType":"com.xedb.data.Usuarios","displayField":"usuario","formField":"usuarios","readonly":true,"required":true,"width":"90%"}, {}],
-formusuaLiveForm2EditPanel: ["wm.EditPanel", {"borderColor":"#FBFBFB","desktopHeight":"32px","height":"32px","liveForm":"formusuaLiveForm2","operationPanel":"operationPanel1","savePanel":"savePanel1"}, {}, {
+formusuaLiveForm2EditPanel: ["wm.EditPanel", {"desktopHeight":"32px","height":"32px","liveForm":"formusuaLiveForm2","operationPanel":"operationPanel1","savePanel":"savePanel1"}, {}, {
 savePanel1: ["wm.Panel", {"height":"100%","horizontalAlign":"right","layoutKind":"left-to-right","showing":false,"verticalAlign":"top","width":"100%"}, {}, {
 saveButton1: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"caption":"Guardar","height":"100%","margin":"4"}, {"onclick":"formusuaLiveForm2EditPanel.saveData"}, {
 binding: ["wm.Binding", {}, {}, {

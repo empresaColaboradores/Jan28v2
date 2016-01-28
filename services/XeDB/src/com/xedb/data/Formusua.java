@@ -5,15 +5,15 @@ package com.xedb.data;
 
 /**
  *  XeDB.Formusua
- *  01/28/2016 14:17:24
+ *  01/28/2016 15:52:34
  * 
  */
 public class Formusua {
 
     private Long idFormusua;
+    private String activo;
     private Formulario formulario;
     private Usuarios usuarios;
-    private String activo;
 
     public Long getIdFormusua() {
         return idFormusua;
@@ -21,6 +21,14 @@ public class Formusua {
 
     public void setIdFormusua(Long idFormusua) {
         this.idFormusua = idFormusua;
+    }
+
+    public String getActivo() {
+        return activo;
+    }
+
+    public void setActivo(String activo) {
+        this.activo = activo;
     }
 
     public Formulario getFormulario() {
@@ -37,14 +45,6 @@ public class Formusua {
 
     public void setUsuarios(Usuarios usuarios) {
         this.usuarios = usuarios;
-    }
-
-    public String getActivo() {
-        return activo;
-    }
-
-    public void setActivo(String activo) {
-        this.activo = activo;
     }
 
 }

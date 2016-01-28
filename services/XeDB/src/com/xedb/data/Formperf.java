@@ -5,15 +5,15 @@ package com.xedb.data;
 
 /**
  *  XeDB.Formperf
- *  01/28/2016 14:17:24
+ *  01/28/2016 15:42:28
  * 
  */
 public class Formperf {
 
     private Long idFormperf;
+    private String activo;
     private Formulario formulario;
     private Perfil perfil;
-    private String activo;
 
     public Long getIdFormperf() {
         return idFormperf;
@@ -21,6 +21,14 @@ public class Formperf {
 
     public void setIdFormperf(Long idFormperf) {
         this.idFormperf = idFormperf;
+    }
+
+    public String getActivo() {
+        return activo;
+    }
+
+    public void setActivo(String activo) {
+        this.activo = activo;
     }
 
     public Formulario getFormulario() {
@@ -37,14 +45,6 @@ public class Formperf {
 
     public void setPerfil(Perfil perfil) {
         this.perfil = perfil;
-    }
-
-    public String getActivo() {
-        return activo;
-    }
-
-    public void setActivo(String activo) {
-        this.activo = activo;
     }
 
 }

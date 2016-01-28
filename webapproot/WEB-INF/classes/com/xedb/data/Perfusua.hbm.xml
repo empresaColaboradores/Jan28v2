@@ -3,15 +3,17 @@
     <class name="com.xedb.data.Perfusua" table="PERFUSUA" schema="CLOBO" dynamic-insert="false" dynamic-update="false">
         <id name="idPerfusua" type="long">
             <column name="ID_PERFUSUA" precision="10"/>
-            <generator class="assigned"/>
+            <generator class="sequence">
+                <param name="sequence">PERFUSUA_SEQ</param>
+            </generator>
         </id>
         <property name="activo" type="string">
             <column name="ACTIVO" length="1" not-null="true"/>
         </property>
-        <many-to-one name="perfil" class="com.xedb.data.Perfil">
+        <many-to-one name="perfil" class="com.xedb.data.Perfil" cascade="none">
             <column name="CODIGO_PERFIL" precision="10" not-null="true"/>
         </many-to-one>
-        <many-to-one name="usuarios" class="com.xedb.data.Usuarios">
+        <many-to-one name="usuarios" class="com.xedb.data.Usuarios" cascade="none">
             <column name="CODIGO_USUARIO" length="15" not-null="true"/>
         </many-to-one>
     </class>

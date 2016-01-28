@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  XeDB.Formulario
- *  01/28/2016 14:17:24
+ *  01/28/2016 15:52:34
  * 
  */
 public class Formulario {
@@ -16,8 +16,8 @@ public class Formulario {
     private String descripcion;
     private String nemotecnia;
     private String activo;
-    private Set<com.xedb.data.Formusua> formusuas = new HashSet<com.xedb.data.Formusua>();
     private Set<com.xedb.data.Formperf> formperfs = new HashSet<com.xedb.data.Formperf>();
+    private Set<com.xedb.data.Formusua> formusuas = new HashSet<com.xedb.data.Formusua>();
 
     public Long getCodigo() {
         return codigo;
@@ -51,20 +51,20 @@ public class Formulario {
         this.activo = activo;
     }
 
-    public Set<com.xedb.data.Formusua> getFormusuas() {
-        return formusuas;
-    }
-
-    public void setFormusuas(Set<com.xedb.data.Formusua> formusuas) {
-        this.formusuas = formusuas;
-    }
-
     public Set<com.xedb.data.Formperf> getFormperfs() {
         return formperfs;
     }
 
     public void setFormperfs(Set<com.xedb.data.Formperf> formperfs) {
         this.formperfs = formperfs;
+    }
+
+    public Set<com.xedb.data.Formusua> getFormusuas() {
+        return formusuas;
+    }
+
+    public void setFormusuas(Set<com.xedb.data.Formusua> formusuas) {
+        this.formusuas = formusuas;
     }
 
 }

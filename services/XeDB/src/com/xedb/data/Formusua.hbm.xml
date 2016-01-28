@@ -3,15 +3,17 @@
     <class name="com.xedb.data.Formusua" table="FORMUSUA" schema="CLOBO" dynamic-insert="false" dynamic-update="false">
         <id name="idFormusua" type="long">
             <column name="ID_FORMUSUA" precision="10"/>
-            <generator class="assigned"/>
+            <generator class="sequence">
+                <param name="sequence">FORMUSUA_SEQ</param>
+            </generator>
         </id>
         <property name="activo" type="string">
             <column name="ACTIVO" length="1" not-null="true"/>
         </property>
-        <many-to-one name="formulario" class="com.xedb.data.Formulario">
+        <many-to-one name="formulario" class="com.xedb.data.Formulario" cascade="none">
             <column name="CODIGO_FORMULARIO" precision="10" not-null="true"/>
         </many-to-one>
-        <many-to-one name="usuarios" class="com.xedb.data.Usuarios">
+        <many-to-one name="usuarios" class="com.xedb.data.Usuarios" cascade="none">
             <column name="CODIGO_USUARIO" length="15" not-null="true"/>
         </many-to-one>
     </class>

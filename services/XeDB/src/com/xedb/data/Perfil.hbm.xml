@@ -11,17 +11,17 @@
         <property name="activo" type="string">
             <column name="ACTIVO" length="1" not-null="true"/>
         </property>
-        <set name="perfusuas" inverse="true" cascade="">
-            <key>
-                <column name="CODIGO_PERFIL" precision="10" not-null="true"/>
-            </key>
-            <one-to-many class="com.xedb.data.Perfusua"/>
-        </set>
         <set name="formperfs" inverse="true" cascade="">
             <key>
                 <column name="CODIGO_PERFIL" precision="10" not-null="true"/>
             </key>
             <one-to-many class="com.xedb.data.Formperf"/>
+        </set>
+        <set name="perfusuas" inverse="true" cascade="">
+            <key>
+                <column name="CODIGO_PERFIL" precision="10" not-null="true"/>
+            </key>
+            <one-to-many class="com.xedb.data.Perfusua"/>
         </set>
     </class>
 </hibernate-mapping>

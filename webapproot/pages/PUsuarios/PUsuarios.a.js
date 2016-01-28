@@ -38,10 +38,10 @@ panel1: ["wm.Panel", {"height":"100%","horizontalAlign":"left","layoutKind":"lef
 usuariosLivePanel1: ["wm.LivePanel", {"horizontalAlign":"left","verticalAlign":"top"}, {}, {
 usuariosGridPanel: ["wm.FancyPanel", {"minDesktopHeight":220,"minHeight":220,"title":"Usuarios"}, {}, {
 usuariosDojoGrid: ["wm.DojoGrid", {"_classes":{"domNode":["omgDataGrid"]},"border":"0","columns":[
-{"show":true,"field":"usuario","title":"Usuario","width":"100%","displayType":"Text","align":"left","formatFunc":""},
-{"show":true,"field":"nombre","title":"Nombre","width":"100%","displayType":"Text","align":"left","formatFunc":""},
-{"show":true,"field":"estado","title":"Estado","width":"100%","displayType":"Text","align":"left","formatFunc":""},
-{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Usuario: \" + ${usuario} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Nombre: \" + ${nombre}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Estado: \" + ${estado}\n + \"</div>\"\n\n","mobileColumn":true}
+{"show":true,"field":"usuario","title":"Usuario","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"nombre","title":"Nombre","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"estado","title":"Estado","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Usuario: \" + ${usuario} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Nombre: \" + ${nombre}\n + \"</div>\"\n\n","mobileColumn":true}
 ],"dsType":"com.xedb.data.Usuarios","height":"100%","margin":"4","minDesktopHeight":60}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"source":"lvUsuarios","targetProperty":"dataSet"}, {}]
@@ -56,7 +56,7 @@ wire: ["wm.Wire", {"expression":undefined,"source":"usuariosDojoGrid.selectedIte
 usuarioEditor2: ["wm.Text", {"caption":"Usuario","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"emptyString","formField":"usuario","height":"26px","maxChars":15,"readonly":true,"required":true,"width":"90%"}, {}],
 nombreEditor2: ["wm.Text", {"caption":"Nombre","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"emptyString","formField":"nombre","height":"26px","maxChars":50,"readonly":true,"required":true,"width":"90%"}, {}],
 estadoEditor2: ["wm.Text", {"caption":"Estado","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"emptyString","formField":"estado","height":"26px","maxChars":1,"readonly":true,"required":true,"width":"90%"}, {}],
-usuariosLiveForm2EditPanel: ["wm.EditPanel", {"borderColor":"#FBFBFB","desktopHeight":"32px","height":"32px","liveForm":"usuariosLiveForm2","operationPanel":"operationPanel1","savePanel":"savePanel1"}, {}, {
+usuariosLiveForm2EditPanel: ["wm.EditPanel", {"desktopHeight":"32px","height":"32px","liveForm":"usuariosLiveForm2","operationPanel":"operationPanel1","savePanel":"savePanel1"}, {}, {
 savePanel1: ["wm.Panel", {"height":"100%","horizontalAlign":"right","layoutKind":"left-to-right","showing":false,"verticalAlign":"top","width":"100%"}, {}, {
 saveButton1: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"caption":"Guardar","height":"100%","margin":"4"}, {"onclick":"usuariosLiveForm2EditPanel.saveData"}, {
 binding: ["wm.Binding", {}, {}, {

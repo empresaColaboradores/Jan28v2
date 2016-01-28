@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  *  XeDB.Usuarios
- *  01/28/2016 14:17:24
+ *  01/28/2016 15:52:54
  * 
  */
 public class Usuarios {

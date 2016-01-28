@@ -49,7 +49,7 @@ PPerfiles.widgets = {
 						codigoEditor2: ["wm.Number", {"caption":"Codigo","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"codigo","height":"26px","readonly":true,"required":true,"width":"90%"}, {}],
 						descripcionEditor2: ["wm.LargeTextArea", {"caption":"Descripcion","captionAlign":"right","captionPosition":"left","captionSize":"140px","changeOnKey":true,"desktopHeight":"80px","emptyValue":"emptyString","formField":"descripcion","height":"80px","maxChars":510,"readonly":true,"width":"90%"}, {}],
 						activoEditor2: ["wm.Text", {"caption":"Activo","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"emptyString","formField":"activo","height":"26px","maxChars":1,"readonly":true,"required":true,"width":"90%"}, {}],
-						perfilLiveForm2EditPanel: ["wm.EditPanel", {"borderColor":"#FBFBFB","desktopHeight":"32px","height":"32px","liveForm":"perfilLiveForm2","operationPanel":"operationPanel1","savePanel":"savePanel1"}, {}, {
+						perfilLiveForm2EditPanel: ["wm.EditPanel", {"desktopHeight":"32px","height":"32px","liveForm":"perfilLiveForm2","operationPanel":"operationPanel1","savePanel":"savePanel1"}, {}, {
 							savePanel1: ["wm.Panel", {"height":"100%","horizontalAlign":"right","layoutKind":"left-to-right","showing":false,"verticalAlign":"top","width":"100%"}, {}, {
 								saveButton1: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"caption":"Guardar","height":"100%","margin":"4"}, {"onclick":"perfilLiveForm2EditPanel.saveData"}, {
 									binding: ["wm.Binding", {}, {}, {

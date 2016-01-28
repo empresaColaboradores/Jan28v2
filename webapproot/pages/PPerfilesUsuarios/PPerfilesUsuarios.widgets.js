@@ -35,7 +35,7 @@ PPerfilesUsuarios.widgets = {
 	layoutBox1: ["wm.Layout", {"horizontalAlign":"left","styles":{"backgroundColor":"#ffffff"},"verticalAlign":"top"}, {}, {
 		panel1: ["wm.Panel", {"height":"100%","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
 			perfusuaLivePanel1: ["wm.LivePanel", {"horizontalAlign":"left","verticalAlign":"top"}, {}, {
-				perfusuaGridPanel: ["wm.FancyPanel", {"minDesktopHeight":220,"minHeight":220,"title":"Perfusua"}, {}, {
+				perfusuaGridPanel: ["wm.FancyPanel", {"height":"274px","minDesktopHeight":220,"title":"Perfusua"}, {}, {
 					perfusuaDojoGrid: ["wm.DojoGrid", {"_classes":{"domNode":["omgDataGrid"]},"border":"0","columns":[
 {"show":true,"field":"idPerfusua","title":"IdPerfusua","width":"128px","align":"right","formatFunc":"","mobileColumn":false},
 {"show":true,"field":"perfil.codigo","title":"Codigo Perfil","width":"80px","align":"right","formatFunc":"","editorProps":null,"mobileColumn":false},
@@ -46,9 +46,33 @@ PPerfilesUsuarios.widgets = {
 {"show":false,"field":"usuarios.estado","title":"Estado","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":true,"field":"activo","title":"Activo","width":"100%","align":"left","formatFunc":"","editorProps":null,"mobileColumn":false},
 {"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"IdPerfusua: \" + ${idPerfusua} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Codigo Perfil: \" + ${perfil.codigo}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Usuario: \" + ${usuarios.usuario}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Activo: \" + ${activo}\n + \"</div>\"\n\n","mobileColumn":true}
-],"dsType":"com.xedb.data.Perfusua","height":"100%","margin":"4","minDesktopHeight":60}, {}, {
+],"dsType":"com.xedb.data.Perfusua","height":"249px","margin":"4","minDesktopHeight":60}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"source":"lvPerfilUsuarios","targetProperty":"dataSet"}, {}]
+						}]
+					}]
+				}],
+				fancyPanel1: ["wm.FancyPanel", {"height":"126px","title":"Usuarios"}, {}, {
+					dojoGrid1: ["wm.DojoGrid", {"columns":[
+{"show":true,"field":"usuario","title":"Usuario","width":"100%","displayType":"Text","align":"left","formatFunc":""},
+{"show":true,"field":"nombre","title":"Nombre","width":"100%","displayType":"Text","align":"left","formatFunc":""},
+{"show":true,"field":"estado","title":"Estado","width":"100%","displayType":"Text","align":"left","formatFunc":""},
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Usuario: \" + ${usuario} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Nombre: \" + ${nombre}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Estado: \" + ${estado}\n + \"</div>\"\n\n","mobileColumn":true}
+],"margin":"4","minDesktopHeight":60,"singleClickEdit":true}, {}, {
+						binding: ["wm.Binding", {}, {}, {
+							wire: ["wm.Wire", {"expression":undefined,"source":"perfusuaDojoGrid.selectedItem.usuarios","targetProperty":"dataSet"}, {}]
+						}]
+					}]
+				}],
+				fancyPanel2: ["wm.FancyPanel", {"height":"118px","title":"Perfiles"}, {}, {
+					dojoGrid2: ["wm.DojoGrid", {"columns":[
+{"show":true,"field":"codigo","title":"Codigo","width":"80px","displayType":"Number","align":"right","formatFunc":""},
+{"show":true,"field":"descripcion","title":"Descripcion","width":"100%","displayType":"Text","align":"left","formatFunc":""},
+{"show":true,"field":"activo","title":"Activo","width":"100%","displayType":"Text","align":"left","formatFunc":""},
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Codigo: \" + ${codigo} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Descripcion: \" + ${descripcion}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Activo: \" + ${activo}\n + \"</div>\"\n\n","mobileColumn":true}
+],"margin":"4","minDesktopHeight":60,"singleClickEdit":true}, {}, {
+						binding: ["wm.Binding", {}, {}, {
+							wire: ["wm.Wire", {"expression":undefined,"source":"perfusuaDojoGrid.selectedItem.perfil","targetProperty":"dataSet"}, {}]
 						}]
 					}]
 				}],
@@ -59,9 +83,9 @@ PPerfilesUsuarios.widgets = {
 						}],
 						idPerfusuaEditor2: ["wm.Number", {"caption":"IdPerfusua","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"idPerfusua","height":"26px","readonly":true,"required":true,"width":"90%"}, {}],
 						activoEditor2: ["wm.Text", {"caption":"Activo","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"emptyString","formField":"activo","height":"26px","maxChars":1,"readonly":true,"required":true,"width":"90%"}, {}],
-						perfilLookup2: ["wm.Lookup", {"caption":"Perfil","captionSize":"140px","dataType":"com.xedb.data.Perfil","displayField":"activo","formField":"perfil","readonly":true,"required":true,"width":"90%"}, {}],
-						usuariosLookup1: ["wm.Lookup", {"caption":"Usuarios","captionSize":"140px","dataType":"com.xedb.data.Usuarios","displayField":"usuario","formField":"usuarios","readonly":true,"required":true,"width":"90%"}, {}],
-						perfusuaLiveForm2EditPanel: ["wm.EditPanel", {"borderColor":"#FBFBFB","desktopHeight":"32px","height":"32px","liveForm":"perfusuaLiveForm2","operationPanel":"operationPanel1","savePanel":"savePanel1"}, {}, {
+						perfilLookup2: ["wm.Lookup", {"caption":"Perfil","captionSize":"140px","dataType":"com.xedb.data.Perfil","displayField":"descripcion","formField":"perfil","readonly":true,"required":true,"width":"90%"}, {}],
+						usuariosLookup1: ["wm.Lookup", {"caption":"Usuarios","captionSize":"140px","dataType":"com.xedb.data.Usuarios","displayField":"nombre","formField":"usuarios","readonly":true,"required":true,"width":"90%"}, {}],
+						perfusuaLiveForm2EditPanel: ["wm.EditPanel", {"desktopHeight":"32px","height":"32px","liveForm":"perfusuaLiveForm2","operationPanel":"operationPanel1","savePanel":"savePanel1"}, {}, {
 							savePanel1: ["wm.Panel", {"height":"100%","horizontalAlign":"right","layoutKind":"left-to-right","showing":false,"verticalAlign":"top","width":"100%"}, {}, {
 								saveButton1: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"caption":"Guardar","height":"100%","margin":"4"}, {"onclick":"perfusuaLiveForm2EditPanel.saveData"}, {
 									binding: ["wm.Binding", {}, {}, {

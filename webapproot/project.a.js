@@ -264,10 +264,10 @@ wm.types = {
 					"type": "com.xedb.data.Formulario"
 				},
 				"idFormperf": {
-					"exclude": [],
+					"exclude": ["insert"],
 					"fieldOrder": 0,
 					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
+					"include": ["delete", "read", "update"],
 					"isList": false,
 					"noChange": ["delete", "read", "update"],
 					"required": true,
@@ -322,7 +322,7 @@ wm.types = {
 				},
 				"formperfs": {
 					"exclude": [],
-					"fieldOrder": 5,
+					"fieldOrder": 4,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -332,7 +332,7 @@ wm.types = {
 				},
 				"formusuas": {
 					"exclude": [],
-					"fieldOrder": 4,
+					"fieldOrder": 5,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -378,10 +378,10 @@ wm.types = {
 					"type": "com.xedb.data.Formulario"
 				},
 				"idFormusua": {
-					"exclude": [],
+					"exclude": ["insert"],
 					"fieldOrder": 0,
 					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
+					"include": ["delete", "read", "update"],
 					"isList": false,
 					"noChange": ["delete", "read", "update"],
 					"required": true,
@@ -436,7 +436,7 @@ wm.types = {
 				},
 				"formperfs": {
 					"exclude": [],
-					"fieldOrder": 4,
+					"fieldOrder": 3,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -446,7 +446,7 @@ wm.types = {
 				},
 				"perfusuas": {
 					"exclude": [],
-					"fieldOrder": 3,
+					"fieldOrder": 4,
 					"fieldSubType": null,
 					"include": [],
 					"isList": true,
@@ -472,10 +472,10 @@ wm.types = {
 					"type": "java.lang.String"
 				},
 				"idPerfusua": {
-					"exclude": [],
+					"exclude": ["insert"],
 					"fieldOrder": 0,
 					"fieldSubType": null,
-					"include": ["delete", "read", "update", "insert"],
+					"include": ["delete", "read", "update"],
 					"isList": false,
 					"noChange": ["delete", "read", "update"],
 					"required": true,

@@ -40,11 +40,11 @@ panel1: ["wm.Panel", {"height":"100%","horizontalAlign":"left","layoutKind":"lef
 formularioLivePanel1: ["wm.LivePanel", {"horizontalAlign":"left","verticalAlign":"top"}, {}, {
 formularioGridPanel: ["wm.FancyPanel", {"minDesktopHeight":220,"minHeight":220,"title":"Formulario"}, {}, {
 formularioDojoGrid: ["wm.DojoGrid", {"_classes":{"domNode":["omgDataGrid"]},"border":"0","columns":[
-{"show":true,"field":"codigo","title":"Codigo","width":"101px","displayType":"Number","align":"right","formatFunc":""},
-{"show":true,"field":"descripcion","title":"Descripcion","width":"100%","displayType":"Text","align":"left","formatFunc":""},
-{"show":true,"field":"nemotecnia","title":"Nemotecnia","width":"100%","displayType":"Text","align":"left","formatFunc":""},
-{"show":true,"field":"activo","title":"Activo","width":"100%","displayType":"Text","align":"left","formatFunc":""},
-{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Codigo: \" + ${codigo} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Descripcion: \" + ${descripcion}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Nemotecnia: \" + ${nemotecnia}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Activo: \" + ${activo}\n + \"</div>\"\n\n","mobileColumn":true}
+{"show":true,"field":"codigo","title":"Codigo","width":"65px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"descripcion","title":"Descripcion","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"nemotecnia","title":"Nemotecnia","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"activo","title":"Activo","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Codigo: \" + ${codigo} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Nemotecnia: \" + ${nemotecnia}\n + \"</div>\"\n\n","mobileColumn":true}
 ],"dsType":"com.xedb.data.Formulario","height":"100%","margin":"4","minDesktopHeight":60}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"source":"lvFormularios","targetProperty":"dataSet"}, {}]
@@ -56,11 +56,11 @@ formularioLiveForm2: ["wm.LiveForm", {"editorWidth":"90%","fitToContentHeight":t
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"formularioDojoGrid.selectedItem","targetProperty":"dataSet"}, {}]
 }],
-codigoEditor2: ["wm.Number", {"caption":"Codigo","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"zero","formField":"codigo","height":"26px","readonly":true,"required":true,"width":"90%"}, {}],
+codigoEditor2: ["wm.Number", {"caption":"Codigo","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","disabled":true,"emptyValue":"zero","formField":"codigo","height":"26px","readonly":true,"required":true,"width":"90%"}, {}],
 descripcionEditor2: ["wm.LargeTextArea", {"caption":"Descripcion","captionAlign":"right","captionPosition":"left","captionSize":"140px","changeOnKey":true,"desktopHeight":"80px","emptyValue":"emptyString","formField":"descripcion","height":"80px","maxChars":510,"readonly":true,"required":true,"width":"90%"}, {}],
 nemotecniaEditor2: ["wm.Text", {"caption":"Nemotecnia","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"emptyString","formField":"nemotecnia","height":"26px","maxChars":16,"readonly":true,"required":true,"width":"90%"}, {}],
 activoEditor2: ["wm.Text", {"caption":"Activo","captionSize":"140px","changeOnKey":true,"desktopHeight":"26px","emptyValue":"emptyString","formField":"activo","height":"26px","maxChars":1,"readonly":true,"required":true,"width":"90%"}, {}],
-formularioLiveForm2EditPanel: ["wm.EditPanel", {"borderColor":"#FBFBFB","desktopHeight":"32px","height":"32px","liveForm":"formularioLiveForm2","operationPanel":"operationPanel1","savePanel":"savePanel1"}, {}, {
+formularioLiveForm2EditPanel: ["wm.EditPanel", {"desktopHeight":"32px","height":"32px","liveForm":"formularioLiveForm2","operationPanel":"operationPanel1","savePanel":"savePanel1"}, {}, {
 savePanel1: ["wm.Panel", {"height":"100%","horizontalAlign":"right","layoutKind":"left-to-right","showing":false,"verticalAlign":"top","width":"100%"}, {}, {
 saveButton1: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"caption":"Guardar","height":"100%","margin":"4"}, {"onclick":"formularioLiveForm2EditPanel.saveData"}, {
 binding: ["wm.Binding", {}, {}, {

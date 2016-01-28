@@ -5,15 +5,15 @@ package com.xedb.data;
 
 /**
  *  XeDB.Perfusua
- *  01/28/2016 14:17:24
+ *  01/28/2016 15:52:54
  * 
  */
 public class Perfusua {
 
     private Long idPerfusua;
+    private String activo;
     private Perfil perfil;
     private Usuarios usuarios;
-    private String activo;
 
     public Long getIdPerfusua() {
         return idPerfusua;
@@ -21,6 +21,14 @@ public class Perfusua {
 
     public void setIdPerfusua(Long idPerfusua) {
         this.idPerfusua = idPerfusua;
+    }
+
+    public String getActivo() {
+        return activo;
+    }
+
+    public void setActivo(String activo) {
+        this.activo = activo;
     }
 
     public Perfil getPerfil() {
@@ -37,14 +45,6 @@ public class Perfusua {
 
     public void setUsuarios(Usuarios usuarios) {
         this.usuarios = usuarios;
-    }
-
-    public String getActivo() {
-        return activo;
-    }
-
-    public void setActivo(String activo) {
-        this.activo = activo;
     }
 
 }

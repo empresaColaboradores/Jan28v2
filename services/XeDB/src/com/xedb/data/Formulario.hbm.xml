@@ -14,17 +14,17 @@
         <property name="activo" type="string">
             <column name="ACTIVO" length="1" not-null="true"/>
         </property>
-        <set name="formusuas" inverse="true" cascade="">
-            <key>
-                <column name="CODIGO_FORMULARIO" precision="10" not-null="true"/>
-            </key>
-            <one-to-many class="com.xedb.data.Formusua"/>
-        </set>
         <set name="formperfs" inverse="true" cascade="">
             <key>
                 <column name="CODIGO_FORMULARIO" precision="10" not-null="true"/>
             </key>
             <one-to-many class="com.xedb.data.Formperf"/>
+        </set>
+        <set name="formusuas" inverse="true" cascade="">
+            <key>
+                <column name="CODIGO_FORMULARIO" precision="10" not-null="true"/>
+            </key>
+            <one-to-many class="com.xedb.data.Formusua"/>
         </set>
     </class>
 </hibernate-mapping>
